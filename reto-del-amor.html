@@ -5,29 +5,173 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Reto del Amor - Aleiska Gomez</title>
     <style>
-        body { background-color: #fdfcf9; font-family: 'Verdana', sans-serif; display: flex; flex-direction: column; align-items: center; padding: 20px; }
-        .hoja-reto { background: white; width: 100%; max-width: 500px; padding: 40px; border: 1px solid #e0e0e0; box-shadow: 10px 10px 0px #efede7; }
-        .btn-volver { text-decoration: none; color: #d4a373; font-size: 12px; font-weight: bold; margin-bottom: 20px; display: block; }
-        h1 { color: #d4a373; text-align: center; letter-spacing: 2px; }
-        .oracion { font-style: italic; color: #7f8c8d; text-align: center; margin: 20px 0; background: #fffcf0; padding: 15px; border-radius: 10px; }
-        .mision-box { border: 2px solid #fefae0; padding: 20px; border-radius: 10px; }
-        .check { margin: 15px 0; display: flex; align-items: center; gap: 10px; }
-        input[type="checkbox"] { accent-color: #d4a373; transform: scale(1.2); }
+        :root {
+            --rosa-pastel: #fff5f5;
+            --canela-suave: #d4a373;
+            --dorado: #e9edc9;
+            --texto: #6b705c;
+        }
+
+        body { 
+            background-color: #fdfcf9; 
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+            display: flex; 
+            justify-content: center; 
+            padding: 20px;
+            color: var(--texto);
+        }
+
+        .hoja-reto {
+            background: white;
+            width: 100%;
+            max-width: 500px;
+            padding: 40px;
+            border-radius: 30px; /* Bordes muy suaves */
+            box-shadow: 0 15px 35px rgba(212, 163, 115, 0.1);
+            border: 1px solid var(--dorado);
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Adorno de esquina */
+        .hoja-reto::before {
+            content: '❤';
+            position: absolute;
+            top: -20px;
+            right: -20px;
+            font-size: 100px;
+            color: var(--rosa-pastel);
+            z-index: 0;
+        }
+
+        .contenido { position: relative; z-index: 1; }
+
+        .btn-volver {
+            text-decoration: none;
+            color: var(--canela-suave);
+            font-size: 12px;
+            font-weight: bold;
+            letter-spacing: 1px;
+            display: inline-block;
+            margin-bottom: 20px;
+        }
+
+        h1 { 
+            color: var(--canela-suave); 
+            text-align: center; 
+            font-family: 'Georgia', serif;
+            font-size: 28px;
+            margin-bottom: 5px;
+        }
+
+        .subtitulo {
+            text-align: center;
+            font-size: 12px;
+            letter-spacing: 4px;
+            margin-bottom: 30px;
+            color: #a5a5a5;
+        }
+
+        .oracion-especial {
+            background: var(--rosa-pastel);
+            padding: 25px;
+            border-radius: 20px;
+            font-style: italic;
+            text-align: center;
+            line-height: 1.6;
+            margin-bottom: 30px;
+            border-left: 5px solid var(--canela-suave);
+        }
+
+        .mision-diaria {
+            background: #ffffff;
+            border: 2px solid var(--dorado);
+            padding: 25px;
+            border-radius: 20px;
+        }
+
+        .mision-diaria h3 {
+            margin-top: 0;
+            color: var(--canela-suave);
+            font-size: 16px;
+            text-align: center;
+        }
+
+        .tarea {
+            display: flex;
+            align-items: center;
+            background: #fdfdfd;
+            margin: 10px 0;
+            padding: 12px;
+            border-radius: 12px;
+            transition: 0.3s;
+        }
+
+        .tarea:hover { background: var(--rosa-pastel); }
+
+        input[type="checkbox"] {
+            margin-right: 15px;
+            accent-color: var(--canela-suave);
+            width: 18px;
+            height: 18px;
+            cursor: pointer;
+        }
+
+        .reflexion-espacio {
+            margin-top: 30px;
+        }
+
+        .linea-escribir {
+            border-bottom: 1px solid #eee;
+            height: 35px;
+            width: 100%;
+        }
+
+        .corazon-final {
+            text-align: center;
+            margin-top: 30px;
+            color: var(--canela-suave);
+            font-size: 20px;
+        }
     </style>
 </head>
 <body>
-    <div class="hoja-reto">
+
+<div class="hoja-reto">
+    <div class="contenido">
         <a href="index.html" class="btn-volver">← VOLVER AL MENÚ</a>
-        <h1>RETO DEL AMOR</h1>
-        <div class="oracion">
-            "Padre celestial, que este reto me permita ver con Tus ojos y amar con Tu corazón..."
+        
+        <h1>Reto del Amor</h1>
+        <p class="subtitulo">AGOSTO</p>
+
+        <div class="oracion-especial">
+            "Padre celestial, que este reto me permita ver con Tus ojos y amar con Tu corazón. Que cada acción sea un reflejo de Tu gracia renovada en mi vida."
         </div>
-        <div class="mision-box">
-            <p><strong>MISIONES DE HOY:</strong></p>
-            <div class="check"><input type="checkbox"> <span>Dar una palabra de aliento</span></div>
-            <div class="check"><input type="checkbox"> <span>Orar por alguien en necesidad</span></div>
-            <div class="check"><input type="checkbox"> <span>Realizar un acto de bondad secreto</span></div>
+
+        <div class="mision-diaria">
+            <h3>MISIÓN DE HOY</h3>
+            
+            <div class="tarea">
+                <input type="checkbox"> <span>Dar una palabra de afirmación a alguien.</span>
+            </div>
+            <div class="tarea">
+                <input type="checkbox"> <span>Orar por alguien que me cuesta amar.</span>
+            </div>
+            <div class="tarea">
+                <input type="checkbox"> <span>Realizar un acto de servicio sin esperar nada.</span>
+            </div>
         </div>
+
+        <div class="reflexion-espacio">
+            <p style="font-size: 14px; font-weight: bold;">MI EXPERIENCIA HOY:</p>
+            <div class="linea-escribir"></div>
+            <div class="linea-escribir"></div>
+        </div>
+
+        <div class="corazon-final">🕊️</div>
+        <p style="text-align:center; font-size: 10px; opacity: 0.5;">ALEISKA GOMEZ - 365 DÍAS</p>
     </div>
+</div>
+
 </body>
 </html>
